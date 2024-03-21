@@ -1,8 +1,18 @@
 const Pokemon = require("../domain/pokemon");
 
+let pokemonMap = new Map();
+
 const renamePokemon = (name) => {
-  const pokemon = new Pokemon(name);
-  const newName = pokemon.rename();
+  let newName;
+  if (!pokemonMap.has(name)) {
+    pokemonMap.set(name, 0);
+    newName = `${name}-0`;
+  } else {
+    let count = pokemonMap.get(name);
+    count++;
+    newName = `${name}-${count}`;
+    pokemonMap.set(name, count);
+  }
   return { newName };
 };
 

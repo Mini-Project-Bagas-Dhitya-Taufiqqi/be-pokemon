@@ -6,22 +6,25 @@ class Pokemon {
 
   rename() {
     let newName = this.name;
-    if (this.renameCount > 0) {
-      newName += `-${this.getFibonacci(this.renameCount)}`;
+    let newCount = this.renameCount;
+    if (newCount > 0) {
+      const fibonacciNumber = this.getFibonacci(newCount - 1);
+      newName += `-${fibonacciNumber}`;
     }
-    this.renameCount++;
-    return newName;
+    newCount++;
+    this.renameCount = newCount;
+    return `${newName}-${newCount - 1}`;
   }
 
   getFibonacci(n) {
     let a = 0,
-      b = 1,
-      temp;
+      b = 1;
     if (n === 0) return a;
+    if (n === 1) return b;
     for (let i = 2; i <= n; i++) {
-      temp = a + b;
+      const c = a + b;
       a = b;
-      b = temp;
+      b = c;
     }
     return b;
   }
