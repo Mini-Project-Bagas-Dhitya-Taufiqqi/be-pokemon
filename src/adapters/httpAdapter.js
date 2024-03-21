@@ -19,7 +19,7 @@ app.post("/release-pokemon", (req, res) => {
   res.json(result);
 });
 
-app.post("/rename-pokemon", (req, res) => {
+app.put("/rename-pokemon", (req, res) => {
   const { name } = req.body;
   const result = renamePokemon(name);
   res.json(result);
