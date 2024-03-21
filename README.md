@@ -1,4 +1,5 @@
-Pokemon API
+**Pokemon API**
+
 Welcome to the Pokemon API!
 
 This API provides endpoints for various Pokemon-related features. Please note that while the functionality is related to Pokemon, it is currently using a random domain due to being deployed for free.
